@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="SpeedGauge">
+        <attr name="maxValue" format="integer"/>
+        <attr name="stepValue" format="integer"/>
+        <attr name="value" format="integer"/>
+        <attr name="textColor" format="color"/>
+        <attr name="progressColor" format="color"/>
+        <attr name="needleColor" format="color"/>
+        <attr name="needleVisibility" format="boolean"/>
+        <attr name="progressBackColor" format="color"/>
+        <attr name="udm" format="string"/>
+        <attr name="valDivider" format="integer"/>
+    </declare-styleable>
+</resources>
