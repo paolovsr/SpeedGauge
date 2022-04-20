@@ -7,7 +7,7 @@
     tools:context=".MainActivity">
 
 
-    <com.pab.speedgauge.SpeedGauge
+    <SpeedGauge
         android:id="@+id/main_speed_gauge"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

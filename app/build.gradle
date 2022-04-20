@@ -43,7 +43,7 @@ dependencies {
 
 
    // implementation project(path: ':SpeedGauge')
-    implementation 'com.github.paolovsr:SpeedGauge:0.1.0'
+    implementation 'com.github.paolovsr:SpeedGauge:0.1.1'
 
 
 }
