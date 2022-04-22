@@ -111,7 +111,8 @@ public class SpeedGauge extends View {
     private void init(){
         //Creating objects ahead of time is an important optimization
 
-        needleGradient = new RadialGradient(xCenter, yCenter, innerRadius, Color.TRANSPARENT, needleColor, Shader.TileMode.CLAMP);
+        if(innerRadius>0)
+            needleGradient = new RadialGradient(xCenter, yCenter, innerRadius, Color.TRANSPARENT, needleColor, Shader.TileMode.CLAMP);
 
         bigTicPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
         bigTicPaint.setColor(textColor);
@@ -185,7 +186,7 @@ public class SpeedGauge extends View {
             else
                 displayedValue = String.format("%.2f", (float)(currentValue)/divider);*/
 
-                canvas.drawText(displayedValue,
+            canvas.drawText(displayedValue,
                     xCenter - bigTextPaint.measureText(displayedValue) / 2,
                     (float) (yCenter - radius * Math.cos(Math.toRadians(210)) + (bigTextPaint.ascent() + bigTextPaint.descent())),
                     bigTextPaint);
@@ -235,12 +236,12 @@ public class SpeedGauge extends View {
 
     public void setMaxValue(int maxVal){
         this.maxValue = maxVal;
-        invalidate();
+        checkValues();
     }
 
     public void setStepValue(int stepValue){
         this.stepValue = stepValue;
-        invalidate();
+        checkValues();
     }
     public void setTextColor(int color){
         textColor = color;
@@ -260,6 +261,22 @@ public class SpeedGauge extends View {
     }
     public void setUnitOfMeasurement(String unit){
         unitOfMeasurement = unit;
+        invalidate();
+    }
+
+    public void setValueDivider(int divider){
+        this.divider = divider;
+        checkValues();
+    }
+
+
+    private void checkValues(){
+        if(divider==0)
+            divider=1;
+        scaledMax = maxValue/divider;
+        scaledStep = stepValue/divider;
+        scaledValue =currentValue/divider;
+        init();
         invalidate();
     }
 }

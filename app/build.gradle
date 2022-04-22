@@ -42,8 +42,10 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 
 
-   // implementation project(path: ':SpeedGauge')
-    implementation 'com.github.paolovsr:SpeedGauge:0.1.1'
+    implementation project(path: ':SpeedGauge')
+   // implementation 'com.github.paolovsr:SpeedGauge:0.1.1'
+
+    //implementation files('libs/SpeedGauge-debug.aar')
 
 
 }

@@ -15,6 +15,10 @@ class MainActivity : AppCompatActivity() {
 
          speedGauge = findViewById<SpeedGauge>(R.id.main_speed_gauge);
 
+        speedGauge.setMaxValue(4000)
+
+
+
         animateGaugeUp()
 
     }

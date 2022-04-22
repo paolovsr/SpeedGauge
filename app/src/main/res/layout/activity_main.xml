@@ -7,7 +7,7 @@
     tools:context=".MainActivity">
 
 
-    <SpeedGauge
+    <com.pab.speedgauge.SpeedGauge
         android:id="@+id/main_speed_gauge"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -16,7 +16,7 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
 
-        app:maxValue="4000"
+        app:maxValue="1000"
         app:needleColor="@color/teal_200"
         app:progressBackColor="#EEE"
         app:progressColor="@color/teal_200"
